@@ -713,7 +713,6 @@ pub trait BitRead {
     /// assert_eq!(r.read::<8, u8>().unwrap(), 0x04);
     /// ```
     #[cfg(feature = "alloc")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
     fn read_to_vec(&mut self, bytes: usize) -> io::Result<Vec<u8>> {
         read_to_vec(|buf| self.read_bytes(buf), bytes)
     }
@@ -1354,7 +1353,6 @@ pub trait BitRead2 {
     ///
     /// Passes along any I/O error from the underlying stream.
     #[cfg(feature = "alloc")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
     fn read_to_vec(&mut self, bytes: usize) -> io::Result<Vec<u8>> {
         read_to_vec(|buf| self.read_bytes(buf), bytes)
     }
@@ -1967,7 +1965,6 @@ pub trait ByteRead {
     ///
     /// Passes along any I/O error from the underlying stream.
     #[cfg(feature = "alloc")]
-    #[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
     fn read_to_vec(&mut self, bytes: usize) -> io::Result<Vec<u8>> {
         read_to_vec(|buf| self.read_bytes(buf), bytes)
     }

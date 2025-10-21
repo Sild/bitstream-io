@@ -170,7 +170,6 @@ pub use read::{
     BitRead, BitRead2, BitReader, ByteRead, ByteReader, FromBitStream, FromBitStreamUsing,
     FromBitStreamWith, FromByteStream, FromByteStreamUsing, FromByteStreamWith,
 };
-#[cfg_attr(docsrs, doc(cfg(feature = "alloc")))]
 #[cfg(feature = "alloc")]
 pub use write::BitRecorder;
 pub use write::{
