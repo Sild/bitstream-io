@@ -1967,6 +1967,23 @@ impl<const MAX: u32> SignedBitCount<MAX> {
         self.bits
     }
 
+    /// Returns bit count without sign
+    ///
+    /// This value is 1 less than the signed bit count.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use bitstream_io::{BitCount, SignedBitCount};
+    ///
+    /// let signed_count = SignedBitCount::<10>::new::<5>();
+    /// assert_eq!(signed_count.unsigned_count(), BitCount::<10>::new::<4>());
+    /// ```
+    #[inline(always)]
+    pub const fn unsigned_count(&self) -> BitCount<MAX> {
+        self.unsigned
+    }
+
     /// Returns this bit count's range for the given signed type
     ///
     /// # Example
